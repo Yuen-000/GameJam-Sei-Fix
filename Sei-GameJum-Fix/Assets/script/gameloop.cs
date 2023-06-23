@@ -39,6 +39,7 @@ public class gameloop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ゲームの流れの変化
         switch (going)
         {
             case gameing.countdown:
@@ -56,7 +57,7 @@ public class gameloop : MonoBehaviour
         }
         scoreTest = score;
     }
-
+    //最初の流れで初期化
     void standby()
     {
         _countdownobject.countstart(true);
@@ -66,50 +67,18 @@ public class gameloop : MonoBehaviour
         ok = false;
     }
 
-
+    //ゲームプレイ中の処理
     void gameplay()
     {
         _spornobject.spornstart(true);
-
-        #region change stage check
-        //if (_changeobject.changenum == 1 && badpoint == 0)                             //change stage
-        //{
-        //    score = score + 1;
-        //}
-
-        //if (_changeobject.changenum == 2 && badpoint == 0)
-        //{
-        //    score = score + 1;
-        //}
-
-        //if (_changeobject.changenum == 3 && badpoint == 0)
-        //{
-        //    score = score + 1;
-        //}
-
-        //if (_changeobject.changenum == 4 && badpoint == 0)
-        //{
-        //    score = score + 1;
-        //}
-
-        //if (_changeobject.changenum == 5 && badpoint == 0)
-        //{
-        //    score = score + 1;
-        //}
 
         if (_spornobject.part == 28)
         {
             _changeobject.changenum = 6;
         }
-
-        //if (_changeobject.changenum == 6 && badpoint == 0)
-        //{
-        //    score = score + 1;
-        //}
-
-        #endregion
     }
 
+    //ゲーム終わりの処理
     void gameover()
     {
         _countdownobject.countstart(false);
@@ -118,6 +87,7 @@ public class gameloop : MonoBehaviour
         text.color = new Color(0, 0, 0, 0);
     }
 
+    //スコア計算
     void scorecount(bool checkscore)
     {
         if (checkscore)

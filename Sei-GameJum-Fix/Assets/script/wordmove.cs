@@ -63,6 +63,7 @@ public class wordmove : MonoBehaviour
     {
         if (target)
         {
+            //ターゲットとの距離の計算
             dist = Vector3.Distance(target.position, transform.position);
         }
 
@@ -73,34 +74,42 @@ public class wordmove : MonoBehaviour
                 speed = 0;
                 transform.Translate(new Vector3(0, speed, 0));
 
+                //距離が0のときに何がする
                 if (dist == 0)
                 {
                     partcount.part = partcount.part + 1;
                     partcount.instantMode = true;
 
+                    //スコアが+1
                     gameloop.score += 1;
 
                     SEManager.Instance.Play("Play_ Success SE", 0.5f);
 
+                    //プレイヤーに範囲内にいるの判定の知らせ
                     text.text = "O";
                     text.color = new Color(1,0,0,1);
                     Invoke("FinishOX", 0.6f);
                 }
+                //距離が1より少ないのときに何がする
                 else if (dist <= 1f)
                 {
                     partcount.part = partcount.part + 1;
                     partcount.instantMode = true;
 
+                    //スコアが+1
                     gameloop.score += 1;
 
                     SEManager.Instance.Play("Play_ Success SE", 0.5f);
 
+                    //プレイヤーに範囲内にいるの判定の知らせ
                     text.text = "O";
                     text.color = new Color(1, 0, 0, 1);
                     Invoke("FinishOX", 0.6f);
                 }
+                //距離が1より多きのときに何がする
                 else if (dist > 1f)
                 {
+                    //間違いたら次のステージに飛ぶ
                     if (partcount.part < 5)
                     {
                         partcount.part = 5;
@@ -132,6 +141,7 @@ public class wordmove : MonoBehaviour
 
                     SEManager.Instance.Play("Play_ Failure SE", 0.5f);
 
+                    //プレイヤーに範囲外にいるの判定の知らせ
                     text.text = "X";
                     text.color = new Color(1, 0, 0, 1);
                     Invoke("FinishOX", 0.6f);
@@ -140,14 +150,12 @@ public class wordmove : MonoBehaviour
             }
         }
     }
-    void ChangeStage()
-    {
-        stage.changenum += 1;
-    }
+    //次のパーツがスタート
     void NextPart()
     {
         stop = false;
     }
+    //知らせの文字を見えなくする
     void FinishOX()
     {
         text.color = new Color(0, 0, 0, 0);

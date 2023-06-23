@@ -17,6 +17,7 @@ public class changestage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //ステージのChange
         switch (changenum)
         {
             case 0:
@@ -71,6 +72,7 @@ public class changestage : MonoBehaviour
                 break;
 
             case 6:
+                //スポーンした文字を消す
                 GameObject[] objs = GameObject.FindGameObjectsWithTag("seipart");
                 for (int i = 0; i < objs.Length; i++)
                 {
@@ -81,6 +83,7 @@ public class changestage : MonoBehaviour
                 break;
 
             case 7:
+                //ゲームオーバーまで飛ぶ
                 _gameloop.setgamestart(gameing.gameover);
                 break;
 
