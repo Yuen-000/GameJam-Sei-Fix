@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TitleScence/TitleScene.unity
+    guid: 8fb23a1be176e3948bd2032794eab135
+  - enabled: 1
+    path: Assets/Scenes/GameScence/stagescenes.unity
+    guid: 8d63e18ba1a56a24a90dd23cf07063c7
+  - enabled: 1
+    path: Assets/Scenes/ResultScence/wonderscenes.unity
+    guid: 641b97e196224b3478551711a752a029
+  - enabled: 1
+    path: Assets/Scenes/ResultScence/goodluckscenes.unity
+    guid: 172ea96e373e1da4690cf064dcceca69
+  - enabled: 1
+    path: Assets/Scenes/ResultScence/goodlscenes.unity
+    guid: ea92b57f115bb5a4190bfca5bd30c6c7
+  m_configObjects: {}
