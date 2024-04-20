@@ -5,7 +5,7 @@
 そのゲームのバグを修正して、ブラシュアップしました。
 
 ゲームのロケーション：
-\GameJam-Sei-Fix\Sei-GameJum-Fix\bd\Sei-GameJum.exe
+\...\Sei-GameJum-Fix\bd\Sei-GameJum.exe
 
 ゲーム内容：
 バラバラになった文字のパーツを正確に嵌めて、高得点を狙いましょう。
